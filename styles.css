@@ -1,0 +1,112 @@
+/* color-themes 
+
+colorPrimary : #ffab91  tables background
+colorPrimaryLight : #ffddc1  table-rows even
+color PrimaryDark: #c97b63 header, borders
+colorSecondary: #e0e0e0 buttons
+
+*/
+
+:root{
+	--colorPrimary : #ffab91;
+	--colorPrimaryLight : #ffddc1;  
+	--colorPrimaryDark: #c97b63;
+	--colorSecondary: #e0e0e0;
+}
+
+body{
+	font-family: system-ui;
+	font-size: small;
+	font-weight: 500;
+	margin: 5px 5px 5px 5px;
+	/* background-color: #ffd9b3; */
+	background-color: #ffddc1;
+}
+.headRow{
+    font-weight: bold;
+}
+
+button{
+	background-color: #e0e0e0;
+	border: 1px;
+	border-radius: 8px;
+	border-style: solid;
+	border-color: #9F9F9F;
+	height: 3em;
+
+}
+table{
+	border-collapse: collapse;
+	/* border: none; */
+	width: 100%;
+	margin-left:auto; 
+    margin-right:auto;
+    margin-top: 15px;
+	margin-bottom: 5px;
+	background-color: #ffab91;
+}
+table.navTable td {
+	border: none;
+}
+table.header{
+	background-color: #c97b63;
+}
+td, th {
+	/* border: none; */
+	border: 1px solid #c97b63;
+	padding: 0.5rem;
+	text-align: center;
+  }
+
+
+.tblResults tr:nth-child(even) {
+	background-color: #ffddc1;
+}
+
+
+@keyframes blinker {
+		50% { opacity: 0.5;}
+	  }
+
+
+.tblStandings{
+	margin-top: 20pt;
+}
+.tblStandings tr:nth-child(even){
+	background-color: #ffddc1;
+}
+p.spacer{
+	min-height: 1rem;
+}
+
+.navButtons{
+		width: 3.0em;
+	}
+.black{
+	color:black; 
+}
+.red{
+		color:red;
+	}
+.green{
+		color:green;
+	}
+td.ten{
+		width: 10%;
+	}
+td.twenty{
+		width: 20%;
+	}
+td.fifty{
+		width: 50%;
+	}
+td.sxty{
+		width:60%;
+	}
+
+picture{
+		display: none;
+	}
+a{
+		pointer-events: none;
+	}
