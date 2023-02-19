@@ -248,8 +248,8 @@ async function getToday() {
       headRow.innerHTML = `<td class="twenty">Zeit<td class="fifty">${element.name}</td><td class="ten">Erg</td>`;
       table.appendChild(headRow);
       element.sportEvents.forEach(event => {
-        const when = event.weekday.substring(0, 2) + " ," + event.time + "<br>" + event.date;
-        const result = `<span class= "">-:-</span>`;
+        let when = event.weekday.substring(0, 2) + " ," + event.time + "<br>" + event.date;
+        let result = `<span class= "">-:-</span>`;
         if (event.latestScore && event.state == "LIVE") result = `<span class="live">${event.latestScore.home} : ${event.latestScore.away}`;
         if (event.latestScore && event.state == "FINISHED") result = `<span class="green">${event.latestScore.home} : ${event.latestScore.away}`;
         if (event.latestScore && event.state == "BREAK") result = `<span class="green">${event.latestScore.home} : ${event.latestScore.away}`;
