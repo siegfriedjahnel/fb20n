@@ -239,6 +239,7 @@ async function getToday() {
   const response = await fetch(route);
   const res_json = await (response.json());
   const data = JSON.parse(res_json.contents);
+  content2.innerHTML="";
   data.forEach(element => {
     if (element.__typename == "FootballCompetition") {
       const table = document.createElement("table");
