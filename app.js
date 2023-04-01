@@ -232,6 +232,7 @@ async function getToday() {
   content1.innerHTML = "";
   content2.innerHTML = "";
   content3.innerHTML = "";
+  content2.innerHTML = `<img src="icons/loading.gif">`;
   matchdayContainer.innerHTML = "";
   const query = `https://frontend-next.sportdaten.t-online.de/api/matches/day/heute/`;
   const route = proxy+query;
