@@ -33,7 +33,8 @@ let competitionId;
 let competitionName;
 
 //const opta_ids = { "bl1": "sdc_fmdo-22", "bl2": "sdc_fmdo-87", "bl3": "sdc_fmdo-374", "el": "sdc_fmdo-6", "dfb": "sdc_fmdo-231", "cl": "sdc_fmdo-5" };
-const proxy = "https://api.allorigins.win/get?url=";
+//const proxy = "https://api.allorigins.win/get?url=";
+const proxy = "https://sj-sam.de/proxy/uniProxy2.php?url=";
 
 
 
@@ -154,9 +155,9 @@ async function show(matchDay) {
   const query = `https://frontend-next.sportdaten.t-online.de/api/matches/matchday/daygroups/${matchDay}`;
   const route = proxy+query;
   const response = await (fetch(route));
-  const res_json = await (response.json());
+  const data = await response.json();
   content2.innerHTML="";
-  const data = JSON.parse(res_json.contents);
+  // const data = JSON.parse(json.contents);
   try{matchdayId = data.dayGroups[0].matches[0].matchday.id} catch{};
   try{selectedMatchDayName = data.selectedMatchDay.name} catch{};
   try{selectedMatchDayId = data.selectedMatchDay.id} catch{};
@@ -203,8 +204,8 @@ async function drawStandings(competitionId){
   const query = `https://frontend-next.sportdaten.t-online.de/api/competitions/standingsTable/?competitionId=sdc_fs-${competitionId}`;
   const route = proxy+query;
   const response = await (fetch(route));
-  const res_json = await (response.json());
-  const data = JSON.parse(res_json.contents);
+  const data = await (response.json());
+  // const data = JSON.parse(res_json.contents);
 
 
   data.standings.forEach(element => {
@@ -237,8 +238,8 @@ async function getToday() {
   const query = `https://frontend-next.sportdaten.t-online.de/api/matches/day/heute/`;
   const route = proxy+query;
   const response = await fetch(route);
-  const res_json = await (response.json());
-  const data = JSON.parse(res_json.contents);
+  const data = await response.json();
+  // const data = JSON.parse(res_json.contents);
   content2.innerHTML="";
   data.forEach(element => {
     if (element.__typename == "FootballCompetition") {
