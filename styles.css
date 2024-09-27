@@ -57,7 +57,23 @@ td, th {
 	padding: 0.5rem;
 	text-align: center;
   }
-
+.infoText{
+	padding: 1pt;
+}
+  #mainMenu {
+    position: fixed;
+    opacity: 0;
+    max-width: 400px;
+    min-width: 320px;
+    background: #cccccc;
+    top: 100px;
+    right: -600px;
+    transition: all .75s ease;
+  }
+  #mainMenu.show {
+    opacity: 1;
+    right: 0px;
+}
 
 .tblResults tr:nth-child(even) {
 	background-color: #ffddc1;

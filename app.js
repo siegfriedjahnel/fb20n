@@ -47,7 +47,7 @@ const plusButton = document.getElementById('plusButton');
 
 const divFupa = document.getElementById("divFupa");
 const refreshButton = document.getElementById('refreshButton');
-
+const btnMenu = document.getElementById("btnMenu")
 
 document.getElementById("bl1").addEventListener("click", function () {
   show('sdc_fmdo-22')
@@ -112,7 +112,11 @@ minusButton.addEventListener('click', function () {
 plusButton.addEventListener('click', function () {
   changeMatchday(1);
 });
-
+//-------------------------------------------------------------------------------
+btnMenu.addEventListener("click", (e) => {
+  toggleMenu();
+});
+//-------------------------------------------------------------------------------
 
 //--------------End of DOM-Settings-----------------------------------------------
 
@@ -129,7 +133,15 @@ plusButton.addEventListener('click', function () {
 // });
 
 //-----------------------------------------------------------------------------------
-
+function toggleMenu(){
+  //infobox.innerHTML = "";
+  let m = document.getElementById("mainMenu");
+  if (m.className == "") {
+    m.className = "show";
+  } else {
+    m.className = "";
+  }
+}
 //---------------------------- increase or decrease matchday---------
 function changeMatchday(direction) {
   let matchdayIndex = parseInt(selectedMatchDayId.split("-")[1]);//get number from fmd-1091985
